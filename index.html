@@ -140,7 +140,6 @@
   .tags{
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-between;
     gap:8px;
     margin-top:18px;
   }
@@ -574,11 +573,11 @@
     position:absolute;
     top:100%;
     right:0;
-    width:200px;
+    width:150px;
     margin-top:10px;
     display:flex;
     flex-direction:column;
-    gap:8px;
+    gap:6px;
     z-index:20;
   }
   .nav-dropdown[hidden]{
@@ -586,14 +585,16 @@
   }
   .nav-dropdown a{
     display:block;
-    padding:14px 16px;
+    padding:9px 12px;
     background:var(--surface);
     border:1px solid var(--border);
-    border-radius:10px;
+    border-radius:8px;
     text-decoration:none;
     color:var(--ink);
     font-weight:600;
-    font-size:0.95rem;
+    font-size:0.82rem;
+    text-align:right;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
   }
   .nav-dropdown a:active{background:var(--surface-2);}
 
