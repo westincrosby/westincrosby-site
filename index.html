@@ -1,4 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Westin Crosby Coaching</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Westin Crosby Coaching</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -47,7 +52,7 @@
   }
   .wrap{max-width:720px;margin:0 auto;}
   @media (min-width:840px){
-    .wrap, .topbar, .nav-dropdown, .footer-cols, .footer-bottom{max-width:900px;}
+    .wrap, .topbar, .footer-cols, .footer-bottom{max-width:900px;}
   }
 
   .stripe{
@@ -135,6 +140,7 @@
   .tags{
     display:flex;
     flex-wrap:wrap;
+    justify-content:space-between;
     gap:8px;
     margin-top:18px;
   }
@@ -539,6 +545,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    position:relative;
   }
   .topbar-brand{
     font-family:"JetBrains Mono", ui-monospace, monospace;
@@ -564,12 +571,15 @@
   }
   .hamburger-btn svg{width:18px;height:18px;display:block;}
   .nav-dropdown{
-    max-width:720px;
-    margin:0 auto;
-    padding-top:10px;
+    position:absolute;
+    top:100%;
+    right:0;
+    width:200px;
+    margin-top:10px;
     display:flex;
     flex-direction:column;
     gap:8px;
+    z-index:20;
   }
   .nav-dropdown[hidden]{
     display:none;
@@ -638,19 +648,23 @@
     color:var(--muted);
     margin:0;
   }
-</style></head><body>
+</style>
+</head>
+<body>
+
 
 <nav class="topbar">
   <a class="topbar-brand" href="#home">Westin Crosby</a>
   <button class="hamburger-btn" id="nav-toggle" aria-label="Menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
   </button>
+  <div class="nav-dropdown" id="nav-dropdown" hidden>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#free">Free Training</a>
+  </div>
 </nav>
-<div class="nav-dropdown" id="nav-dropdown" hidden>
-  <a href="#home">Home</a>
-  <a href="#programs">Programs</a>
-  <a href="#about">About</a>
-</div>
 
 <div class="wrap" id="page-home">
 
@@ -825,6 +839,22 @@
         <div class="detail-item-desc">Message me directly between check-ins with questions, form checks, or when life throws a wrench in the plan — you're never just left to figure it out on your own.</div>
       </div>
     </div>
+    <div class="detail-item">
+      <div class="detail-item-num">06</div>
+      <div>
+        <div class="detail-item-title">Monthly Recalibration</div>
+        <div class="detail-item-subhead">Redialed Targets</div>
+        <div class="detail-item-desc">Once a month your training and macros get redialed based on your results, so your plan progresses as you progress instead of running on autopilot.</div>
+      </div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-item-num" style="display:flex; align-items:flex-start; justify-content:center; padding-top:2px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="var(--ink)"><path d="M12 2l2.9 6.9L22 9.5l-5.5 5 1.6 7.5L12 18.3 5.9 22l1.6-7.5L2 9.5l7.1-.6z"/></svg></div>
+      <div>
+        <div class="detail-item-title">Bonus: The Full Vault</div>
+        <div class="detail-item-subhead">Every 8-Week Program, Included</div>
+        <div class="detail-item-desc">Every 8-week program I sell — Kettlebell, Dumbbell, and Calisthenics — yours to keep for travel days, extra inspiration, and life after coaching.</div>
+      </div>
+    </div>
   </div>
 
   <div class="detail-eyebrow" style="margin-top:44px;">How It Works</div>
@@ -861,7 +891,7 @@
   <div class="fit-check-box yes">
     <div class="fit-check-title">This is for you if...</div>
     <ul class="fit-check-list">
-      <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You're a dad or a busy working guy who needs to kickstart yourself into gear, and ready to commit to a full 12 weeks.</span></li>
+      <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You're a dad or a busy guy who needs to kickstart yourself into gear, and ready to commit to a full 12 weeks.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You can get in 3&ndash;5 sessions a week, even if time is a constraint and workouts need to be short.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You want a plan built around your actual schedule and life, not one you have to bend your day around.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You'll show up to your weekly check-in and actually follow the plan you're given.</span></li>
@@ -901,7 +931,7 @@
     </details>
     <details class="faq-item">
       <summary class="faq-q">What if the plan isn't working for me?</summary>
-      <div class="faq-a">It's never static. Every week's check-in feeds back into the plan, so it's constantly getting adjusted off your real numbers, not left on autopilot for 12 weeks.</div>
+      <div class="faq-a">It's never static. Every week's check-in feeds back into the plan, and every month we do a full recalibration — training and macros redialed based on your results — so it's constantly getting adjusted off your real numbers, not left on autopilot for 12 weeks.</div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Do you work with beginners?</summary>
@@ -1023,7 +1053,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">How is this different from 1:1 Coaching?</summary>
-      <div class="faq-a">This is training only — a program built based on your goals and equipment. No nutrition, no weekly check-ins, no ongoing adjustments. You run it, I build it.</div>
+      <div class="faq-a">This is training only — a program built based on your goals and equipment. No nutrition, no coaching, no weekly check-ins, and no ongoing adjustments. You run it, I build it.</div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">How long until I get my program?</summary>
@@ -1348,4 +1378,6 @@
     }
   })();
 </script>
-</body></html>
+
+</body>
+</html>
