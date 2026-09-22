@@ -544,7 +544,6 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    position:relative;
   }
   .topbar-brand{
     font-family:"JetBrains Mono", ui-monospace, monospace;
@@ -570,30 +569,28 @@
   }
   .hamburger-btn svg{width:18px;height:18px;display:block;}
   .nav-dropdown{
-    position:absolute;
-    top:100%;
-    right:0;
-    width:150px;
-    margin-top:10px;
+    max-width:720px;
+    margin:0 auto;
+    padding-top:10px;
     display:flex;
     flex-direction:column;
+    align-items:flex-end;
     gap:6px;
-    z-index:20;
   }
   .nav-dropdown[hidden]{
     display:none;
   }
   .nav-dropdown a{
     display:block;
-    padding:9px 12px;
+    width:150px;
+    padding:10px 14px;
     background:var(--surface);
     border:1px solid var(--border);
     border-radius:8px;
     text-decoration:none;
     color:var(--ink);
     font-weight:600;
-    font-size:0.82rem;
-    text-align:right;
+    font-size:0.85rem;
     box-shadow:0 4px 12px rgba(0,0,0,0.08);
   }
   .nav-dropdown a:active{background:var(--surface-2);}
@@ -659,13 +656,13 @@
   <button class="hamburger-btn" id="nav-toggle" aria-label="Menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
   </button>
-  <div class="nav-dropdown" id="nav-dropdown" hidden>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#programs">Programs</a>
-    <a href="#free">Free Training</a>
-  </div>
 </nav>
+<div class="nav-dropdown" id="nav-dropdown" hidden>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#programs">Programs</a>
+  <a href="#free">Free Training</a>
+</div>
 
 <div class="wrap" id="page-home">
 
