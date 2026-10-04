@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Westin Crosby Coaching</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Westin Crosby Coaching</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -47,7 +48,7 @@
   }
   .wrap{max-width:720px;margin:0 auto;}
   @media (min-width:840px){
-    .wrap, .topbar, .nav-dropdown, .footer-cols, .footer-bottom{max-width:900px;}
+    .wrap, .topbar, .footer-cols, .footer-bottom{max-width:900px;}
   }
 
   .stripe{
@@ -129,7 +130,6 @@
     font-size:1.02rem;
     line-height:1.65;
     color:var(--ink);
-    max-width:60ch;
   }
   p.body-copy + p.body-copy{margin-top:12px;}
 
@@ -570,21 +570,24 @@
     padding-top:10px;
     display:flex;
     flex-direction:column;
-    gap:8px;
+    align-items:flex-end;
+    gap:6px;
   }
   .nav-dropdown[hidden]{
     display:none;
   }
   .nav-dropdown a{
     display:block;
-    padding:14px 16px;
+    width:150px;
+    padding:10px 14px;
     background:var(--surface);
     border:1px solid var(--border);
-    border-radius:10px;
+    border-radius:8px;
     text-decoration:none;
     color:var(--ink);
     font-weight:600;
-    font-size:0.95rem;
+    font-size:0.85rem;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
   }
   .nav-dropdown a:active{background:var(--surface-2);}
 
@@ -640,7 +643,7 @@
     margin:0;
   }
 </style>
-</head><body>
+
 <nav class="topbar">
   <a class="topbar-brand" href="#home">Westin Crosby</a>
   <button class="hamburger-btn" id="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -649,8 +652,9 @@
 </nav>
 <div class="nav-dropdown" id="nav-dropdown" hidden>
   <a href="#home">Home</a>
-  <a href="#programs">Programs</a>
   <a href="#about">About</a>
+  <a href="#programs">Programs</a>
+  <a href="#free">Free Training</a>
 </div>
 
 <div class="wrap" id="page-home">
@@ -773,16 +777,16 @@
   <h1 class="detail-title">A FULL-BODY<br>12-WEEK<br>TRANSFORMATION.</h1>
   <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
     <div class="detail-price" style="margin-bottom:0;"><b>$150/wk</b><span>&times;12 weeks · $1,800 total</span></div>
-    <div class="detail-price" style="margin-bottom:0; background:var(--surface-2); border-color:var(--ink);"><b>~$3,100</b><span>value</span></div>
-  </div>
-  <p class="body-copy">This is the whole system — training, eating, and the accountability to actually finish. Here's exactly what's inside.</p>
-
-  <div style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; background:var(--surface-2); border:1px solid var(--ink); border-radius:12px; padding:14px 16px; margin-top:18px;">
     <div style="display:inline-flex; align-items:center; gap:6px; background:var(--ink); border-radius:999px; padding:5px 11px; flex-shrink:0;">
       <svg viewBox="0 0 24 24" width="11" height="11" fill="var(--bg)"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
       <span style="font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:700; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--bg); white-space:nowrap;">Limited Spots</span>
     </div>
+  </div>
+  <p class="body-copy">This is the whole system — training, eating, and the accountability to actually finish. Here's exactly what's inside.</p>
+
+  <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; background:var(--surface-2); border:1px solid var(--ink); border-radius:12px; padding:14px 16px; margin-top:18px;">
     <span style="font-size:0.9rem; line-height:1.45; color:var(--ink);">I only coach a handful of fellas at a time, and spots are filling. Accepting applications now.</span>
+    <a class="btn fill" href="https://form.jotform.com/262585534840059" target="_blank" rel="noopener" style="margin-top:4px;">Apply for Coaching</a>
   </div>
 
   <div class="detail-items">
@@ -826,6 +830,22 @@
         <div class="detail-item-desc">Message me directly between check-ins with questions, form checks, or when life throws a wrench in the plan — you're never just left to figure it out on your own.</div>
       </div>
     </div>
+    <div class="detail-item">
+      <div class="detail-item-num">06</div>
+      <div>
+        <div class="detail-item-title">Monthly Recalibration</div>
+        <div class="detail-item-subhead">Redialed Targets</div>
+        <div class="detail-item-desc">Once a month your training and macros get redialed based on your results, so your plan progresses as you progress instead of running on autopilot.</div>
+      </div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-item-num" style="display:flex; align-items:flex-start; justify-content:center; padding-top:2px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="var(--ink)"><path d="M12 2l2.9 6.9L22 9.5l-5.5 5 1.6 7.5L12 18.3 5.9 22l1.6-7.5L2 9.5l7.1-.6z"/></svg></div>
+      <div>
+        <div class="detail-item-title">Bonus: The Full Vault</div>
+        <div class="detail-item-subhead">Every 8-Week Program, Included</div>
+        <div class="detail-item-desc">Every 8-week program I sell — Kettlebell, Dumbbell, and Calisthenics — yours to keep for travel days, extra inspiration, and life after coaching.</div>
+      </div>
+    </div>
   </div>
 
   <div class="detail-eyebrow" style="margin-top:44px;">How It Works</div>
@@ -862,7 +882,7 @@
   <div class="fit-check-box yes">
     <div class="fit-check-title">This is for you if...</div>
     <ul class="fit-check-list">
-      <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You're a dad or a busy working guy who needs to kickstart yourself into gear, and ready to commit to a full 12 weeks.</span></li>
+      <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You're a dad or a busy guy who needs to kickstart yourself into gear, and ready to commit to a full 12 weeks.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You can get in 3&ndash;5 sessions a week, even if time is a constraint and workouts need to be short.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You want a plan built around your actual schedule and life, not one you have to bend your day around.</span></li>
       <li class="fit-check-item"><span class="fit-check-icon">&check;</span><span>You'll show up to your weekly check-in and actually follow the plan you're given.</span></li>
@@ -902,7 +922,7 @@
     </details>
     <details class="faq-item">
       <summary class="faq-q">What if the plan isn't working for me?</summary>
-      <div class="faq-a">It's never static. Every week's check-in feeds back into the plan, so it's constantly getting adjusted off your real numbers, not left on autopilot for 12 weeks.</div>
+      <div class="faq-a">It's never static. Every week's check-in feeds back into the plan, and every month we do a full recalibration — training and macros redialed based on your results — so it's constantly getting adjusted off your real numbers, not left on autopilot for 12 weeks.</div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Do you work with beginners?</summary>
@@ -1024,7 +1044,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">How is this different from 1:1 Coaching?</summary>
-      <div class="faq-a">This is training only — a program built based on your goals and equipment. No nutrition, no weekly check-ins, no ongoing adjustments. You run it, I build it.</div>
+      <div class="faq-a">This is training only — a program built based on your goals and equipment. No nutrition, no coaching, no weekly check-ins, and no ongoing adjustments. You run it, I build it.</div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">How long until I get my program?</summary>
@@ -1055,8 +1075,11 @@
 <div class="wrap" id="page-about" hidden>
   <div class="detail-eyebrow">About</div>
   <h1 class="detail-title">WHY I<br>COACH.</h1>
-  <p class="body-copy">[Placeholder — swap this for your real story: how you got into training, why you coach busy dads specifically, and what makes your approach different. A few sentences is plenty.]</p>
-  <p class="body-copy">[Placeholder — a line or two on your background/credentials, and what someone can expect working with you day to day.]</p>
+  <p class="body-copy">I've been an athlete my whole life — sports through high school and college, and a barbell in my hands since I was 11. I spent 2011 to 2021 in the CrossFit world, then kept programming and training on my own through COVID and beyond. These days I train jiu jitsu too, currently a purple belt.</p>
+  <p class="body-copy">I coach busy guys because I am one.</p>
+  <p class="body-copy">Training has always been the thing that keeps me sharp, disciplined, and able to handle everything else life throws at me — and I want other guys running full schedules to have that same edge instead of pushing it aside because they think they don't have time for it.</p>
+  <p class="body-copy">I know exactly what it takes to squeeze in an effective workout between work, family, and everything else on your plate, because that's what I do myself, every week.</p>
+  <p class="body-copy">My background isn't built on a certification wall — it's built on years of programming for myself, testing what actually works, and adjusting when it doesn't. That trial-and-error experience is what shows up in every plan I write.</p>
 
   <div class="cta-row" style="margin-top:26px;">
     <a class="btn fill" href="https://ig.me/m/westin_crosby" target="_blank" rel="noopener">DM on Instagram</a>
@@ -1068,42 +1091,28 @@
 <div class="wrap" id="page-free" hidden>
   <div class="detail-eyebrow">No Cost, No Catch</div>
   <h1 class="detail-title">FREE.</h1>
-  <p class="body-copy">Start with a free training week:</p>
+  <p class="body-copy">Start with my free 7-day starter week:</p>
 
   <div class="detail-items">
     <div class="detail-item">
       <div class="detail-item-num">01</div>
       <div>
-        <div class="detail-item-title">1 Week of Kettlebell</div>
-        <div class="detail-item-desc">Five kettlebell sessions built the same way as the full program — complexes and conditioning strung together, minimal equipment, real carryover.</div>
+        <div class="detail-item-title">7-Day Starter Week</div>
+        <div class="detail-item-desc">Seven sessions, 20–30 minutes each, built around one kettlebell or a pair of dumbbells — strength, conditioning, mobility, and a bodyweight day you can do anywhere. Scale-down and scale-up options for every day, plus a tracker.</div>
       </div>
     </div>
     <div class="detail-item">
       <div class="detail-item-num">02</div>
       <div>
-        <div class="detail-item-title">1 Week of Dumbbell</div>
-        <div class="detail-item-desc">A full week of dumbbell-only training — strength and conditioning blended, built for a home setup or a busy gym floor.</div>
-      </div>
-    </div>
-    <div class="detail-item">
-      <div class="detail-item-num">03</div>
-      <div>
-        <div class="detail-item-title">1 Week of Calisthenics</div>
-        <div class="detail-item-desc">Bodyweight strength work progressed across the week — pushing, pulling, and core, no equipment required.</div>
-      </div>
-    </div>
-    <div class="detail-item">
-      <div class="detail-item-num">04</div>
-      <div>
-        <div class="detail-item-title">My Top 10 Workouts</div>
-        <div class="detail-item-desc">The ten highest-rated sessions pulled straight from client programming — a mixed bag across every modality, ready whenever you need one.</div>
+        <div class="detail-item-title">Bonus: My Top 10 Workouts</div>
+        <div class="detail-item-desc">Ten quick workouts, 15–30 minutes each — kettlebell, dumbbell, or no equipment. Ready whenever you need one.</div>
       </div>
     </div>
   </div>
 
   <div class="detail-cta">
     <p class="body-copy">Drop your name and email and it's on its way.</p>
-    <a class="btn fill" href="https://form.jotform.com/262616742155054" target="_blank" rel="noopener">Get My Free Week</a>
+    <a class="btn fill" href="https://form.jotform.com/262616742155054" target="_blank" rel="noopener">Get My Free Starter Week</a>
   </div>
 
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
@@ -1166,9 +1175,17 @@
         </div>
       </div>
     </div>
+    <div class="detail-items" style="margin-top:12px;">
+      <div class="detail-item">
+        <div>
+          <div class="detail-item-title">Try a Free Sample Week</div>
+          <div class="detail-item-desc">Not sure yet? DM me "KB" on Instagram <a href="https://instagram.com/westin_crosby" target="_blank" rel="noopener">@westin_crosby</a> and I'll send you a free sample week.</div>
+        </div>
+      </div>
+    </div>
     <div class="detail-cta">
       <p class="body-copy">Ready to start? Get instant access below.</p>
-      <a class="btn fill" href="https://form.jotform.com/262624015816050" target="_blank" rel="noopener">Get Instant Access — $44.99</a>
+      <a class="btn fill" href="https://form.jotform.com/262625672645060" target="_blank" rel="noopener">Get Instant Access — Kettlebell $44.99</a>
     </div>
   </div>
 
@@ -1182,9 +1199,17 @@
         </div>
       </div>
     </div>
+    <div class="detail-items" style="margin-top:12px;">
+      <div class="detail-item">
+        <div>
+          <div class="detail-item-title">Try a Free Sample Week</div>
+          <div class="detail-item-desc">Not sure yet? DM me "DB" on Instagram <a href="https://instagram.com/westin_crosby" target="_blank" rel="noopener">@westin_crosby</a> and I'll send you a free sample week.</div>
+        </div>
+      </div>
+    </div>
     <div class="detail-cta">
       <p class="body-copy">Ready to start? Get instant access below.</p>
-      <a class="btn fill" href="https://form.jotform.com/262623883141053" target="_blank" rel="noopener">Get Instant Access — $44.99</a>
+      <a class="btn fill" href="https://form.jotform.com/262625672645060" target="_blank" rel="noopener">Get Instant Access — Dumbbell $44.99</a>
     </div>
   </div>
 
@@ -1198,16 +1223,24 @@
         </div>
       </div>
     </div>
+    <div class="detail-items" style="margin-top:12px;">
+      <div class="detail-item">
+        <div>
+          <div class="detail-item-title">Try a Free Sample Week</div>
+          <div class="detail-item-desc">Not sure yet? DM me "CALI" on Instagram <a href="https://instagram.com/westin_crosby" target="_blank" rel="noopener">@westin_crosby</a> and I'll send you a free sample week.</div>
+        </div>
+      </div>
+    </div>
     <div class="detail-cta">
       <p class="body-copy">Ready to start? Get instant access below.</p>
-      <a class="btn fill" href="https://form.jotform.com/262624032702043" target="_blank" rel="noopener">Get Instant Access — $44.99</a>
+      <a class="btn fill" href="https://form.jotform.com/262625672645060" target="_blank" rel="noopener">Get Instant Access — Calisthenics $44.99</a>
     </div>
   </div>
 
   <div class="detail-cta" style="background:var(--surface-2); border-color:var(--ink);">
     <div class="detail-price" style="background:var(--bg); margin:0 auto 14px;"><b>$99.99</b><span>bundle · <s style="text-decoration-thickness:1px;opacity:0.65;">$134.97 separately</s></span></div>
     <p class="body-copy">Want all 3? Get Kettlebell, Dumbbell, and Calisthenics together and save.</p>
-    <a class="btn fill" href="https://form.jotform.com/262624285881061" target="_blank" rel="noopener">Get All 3 Programs — $99.99</a>
+    <a class="btn fill" href="https://form.jotform.com/262625672645060" target="_blank" rel="noopener">Get All 3 Programs — $99.99</a>
   </div>
 
   <div class="detail-eyebrow" style="margin-top:44px;">How It Works</div>
@@ -1272,7 +1305,7 @@
       <a href="#coaching">1:1 Coaching</a>
       <a href="#programming">Custom Programming</a>
       <a href="#vault">8-Week Programs</a>
-      <a href="#free">Free Training Week</a>
+      <a href="#free">Free Starter Week</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
@@ -1349,4 +1382,5 @@
     }
   })();
 </script>
+
 </body></html>
