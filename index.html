@@ -315,17 +315,15 @@
   .coach-photo{
     display:block;
     width:100%;
-    max-width:420px;
+    max-width:280px;
     height:auto;
     margin:0 auto;
     border-radius:14px;
     border:1px solid var(--border);
-    object-fit:cover;
-    object-position:center top;
   }
   @media (min-width:720px){
-    .coach-grid{ grid-template-columns:1fr auto; align-items:start; }
-    .coach-photo{ max-width:none; width:auto; margin:0; object-fit:contain; }
+    .coach-grid{ grid-template-columns:1fr 260px; align-items:center; gap:28px; }
+    .coach-photo{ width:260px; max-width:260px; margin:0; }
   }
   .about-section{
     margin-top:44px;
@@ -1478,29 +1476,4 @@
   })();
 </script>
 
-<script>
-(function(){
-  function fitCoachPhoto(){
-    var t=document.querySelector('.coach-text');
-    var img=document.querySelector('.coach-photo');
-    if(!t||!img) return;
-    if(window.innerWidth>=720 && t.offsetHeight>0){
-      img.style.width='auto';
-      for(var i=0;i<8;i++){
-        var h=t.offsetHeight;
-        img.style.height=h+'px';
-        if(Math.abs(t.offsetHeight-h)<2) break;
-      }
-    } else {
-      img.style.height='';
-      img.style.width='';
-    }
-  }
-  function soon(){ setTimeout(fitCoachPhoto,50); setTimeout(fitCoachPhoto,400); }
-  window.addEventListener('load',soon);
-  window.addEventListener('resize',fitCoachPhoto);
-  window.addEventListener('hashchange',soon);
-  document.addEventListener('DOMContentLoaded',soon);
-})();
-</script>
 </body></html>
