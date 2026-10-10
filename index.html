@@ -693,6 +693,13 @@
     color:var(--muted);
     margin:0;
   }
+
+  .stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px;}
+  .stat-tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .stat-num{font-family:"Anton","Arial Narrow",sans-serif;font-size:2rem;line-height:1.05;letter-spacing:0.02em;}
+  .stat-label{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  .fit-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .fit-tag{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:0.85rem;font-weight:600;}
 </style>
 
 <nav class="topbar">
@@ -1386,6 +1393,55 @@
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
 
+<div class="wrap" id="page-partners" hidden>
+  <div class="detail-eyebrow">Brand Partnerships</div>
+  <h1 class="detail-title">WORK<br>WITH ME.</h1>
+  <p class="body-copy">I post short, full-body workouts with minimal equipment for busy men who don't have time to waste. Real training, filmed in my driveway gym and on the road. Your product shows up the way my audience actually uses it: mid-workout, not in a staged ad.</p>
+
+  <div class="stat-grid">
+    <div class="stat-tile"><div class="stat-num">17.6K</div><div class="stat-label">Instagram followers</div></div>
+    <div class="stat-tile"><div class="stat-num">JUL '26</div><div class="stat-label">Launched</div></div>
+    <div class="stat-tile"><div class="stat-num">30&ndash;50</div><div class="stat-label">Core audience age</div></div>
+    <div class="stat-tile"><div class="stat-num">MEN</div><div class="stat-label">Busy, high-income</div></div>
+  </div>
+
+  <div class="about-section">
+    <div class="detail-eyebrow">The Audience</div>
+    <h2 class="kicker" style="font-size:1.9rem; margin-top:6px;">WHO'S WATCHING</h2>
+    <p class="body-copy">Mostly men in their 30s and 40s with demanding careers and full schedules. They train at home or on the road, buy quality gear, and want results without the fluff. They follow because the workouts are short, practical, and actually doable.</p>
+  </div>
+
+  <div class="about-section">
+    <div class="detail-eyebrow">Best Fit</div>
+    <h2 class="kicker" style="font-size:1.9rem; margin-top:6px;">BRANDS I WORK WITH</h2>
+    <div class="fit-tags">
+      <span class="fit-tag">Home gym equipment</span>
+      <span class="fit-tag">Training apparel</span>
+      <span class="fit-tag">Supplements &amp; nutrition</span>
+      <span class="fit-tag">Recovery</span>
+      <span class="fit-tag">Wearables</span>
+      <span class="fit-tag">Fitness apps</span>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <div class="detail-eyebrow">Deliverables</div>
+    <h2 class="kicker" style="font-size:1.9rem; margin-top:6px;">WHAT I OFFER</h2>
+    <div class="detail-items">
+      <div class="detail-item"><div class="detail-item-num">01</div><div><div class="detail-item-title">Dedicated Reel</div><div class="detail-item-desc">A full workout Reel built around your product, with on-screen tagging and a caption CTA.</div></div></div>
+      <div class="detail-item"><div class="detail-item-num">02</div><div><div class="detail-item-title">Reel + Stories Bundle</div><div class="detail-item-desc">A Reel plus a Stories sequence with your link, for reach and direct clicks.</div></div></div>
+      <div class="detail-item"><div class="detail-item-num">03</div><div><div class="detail-item-title">Long-Term Ambassador</div><div class="detail-item-desc">Your product worked into my training over months, not a one-off post. The most credible exposure you can buy.</div></div></div>
+    </div>
+  </div>
+
+  <div class="detail-cta">
+    <p class="body-copy">Rates and full analytics on request. Tell me about your brand and I'll reply within 48 hours.</p>
+    <a class="btn fill" href="https://form.jotform.com/262818116737059" target="_blank" rel="noopener">Send a Partnership Inquiry</a>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
 <footer class="site-footer">
   <div class="footer-cols">
     <div class="footer-col">
@@ -1404,6 +1460,7 @@
       <div class="footer-col-title">Company</div>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#partners">Brand Partnerships</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1414,7 +1471,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1423,6 +1480,7 @@
       '#programming': 'page-programming',
       '#free': 'page-free',
       '#vault': 'page-vault',
+      '#partners': 'page-partners',
       '#kettlebell': 'page-vault',
       '#dumbbell': 'page-vault',
       '#calisthenics': 'page-vault'
