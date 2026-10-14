@@ -447,6 +447,22 @@
     max-width:none;
     margin:0 0 16px;
   }
+  .nl-form{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto;}
+  .nl-input{
+    width:100%;
+    padding:14px 16px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--bg);
+    color:var(--ink);
+    font:inherit;
+    font-size:1rem;
+  }
+  .nl-input:focus{outline:2px solid var(--ink);outline-offset:1px;}
+  .nl-btn{width:100%;cursor:pointer;font-family:inherit;}
+  .nl-btn[disabled]{opacity:0.6;cursor:wait;}
+  .nl-note{margin:4px 0 0;font-size:0.85rem;color:var(--muted);}
+  .nl-error{margin:0;font-size:0.9rem;color:#C0392B;}
 
   .fit-check-box{
     background:var(--surface);
@@ -714,6 +730,7 @@
   <a href="#about">About</a>
   <a href="#programs">Programs</a>
   <a href="#free">Free Training</a>
+  <a href="#newsletter">Weekly Workouts</a>
 </div>
 
 <div class="wrap" id="page-home">
@@ -1243,6 +1260,55 @@
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
 
+<div class="wrap" id="page-newsletter" hidden>
+  <div class="detail-eyebrow">Free, Every Sunday</div>
+  <h1 class="detail-title">THE WEEKLY WORKOUTS.</h1>
+  <p class="body-copy">Every Sunday I send you the workouts I actually did that week, written out and ready to run. No guessing what to do when you walk in.</p>
+
+  <div class="detail-items">
+    <div class="detail-item">
+      <div class="detail-item-num">01</div>
+      <div>
+        <div class="detail-item-title">3 Workouts for the Week</div>
+        <div class="detail-item-desc">Monday, Wednesday, Friday. Most take 30 minutes or less with a kettlebell or a pair of dumbbells.</div>
+      </div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-item-num">02</div>
+      <div>
+        <div class="detail-item-title">A Finisher + Move of the Week</div>
+        <div class="detail-item-desc">A short core or conditioning finisher, plus one movement to clean up, with a link to the demo.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-cta">
+    <p class="body-copy">Drop your first name and email. First one lands this Sunday.</p>
+    <form class="nl-form" id="nl-form" action="https://app.kit.com/forms/10043319/subscriptions" method="post">
+      <input class="nl-input" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name" required>
+      <input class="nl-input" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+      <button class="btn fill nl-btn" type="submit">Send Me the Workouts</button>
+      <p class="nl-note">Free. Unsubscribe anytime.</p>
+      <p class="nl-error" id="nl-error" hidden>Something went wrong. Please try again.</p>
+    </form>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-newsletter-thanks" hidden>
+  <div class="detail-eyebrow">You're In</div>
+  <h1 class="detail-title">SEE YOU SUNDAY.</h1>
+  <p class="body-copy">You're on the list. Your first weekly workouts land in your inbox this Sunday. If you don't see it, check your Promotions or Spam folder and drag it to your inbox.</p>
+
+  <div class="detail-cta">
+    <p class="body-copy">Want something to do before Sunday?</p>
+    <a class="btn fill" href="https://form.jotform.com/262616742155054" target="_blank" rel="noopener">Get My Free Starter Week</a>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
 <div class="wrap" id="page-vault" hidden>
   <div class="detail-eyebrow">Self-Guided 8-Week Programs — Pick Your Edition</div>
   <h1 class="detail-title">30-MINUTE<br>STRONG.</h1>
@@ -1468,6 +1534,7 @@
       <a href="#programming">Custom Programming</a>
       <a href="#vault">30-Minute Strong</a>
       <a href="#free">Free Starter Week</a>
+      <a href="#newsletter">Weekly Workouts Newsletter</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
@@ -1484,7 +1551,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1494,6 +1561,9 @@
       '#free': 'page-free',
       '#vault': 'page-vault',
       '#partners': 'page-partners',
+      '#newsletter': 'page-newsletter',
+      '#weekly': 'page-newsletter',
+      '#newsletter-thanks': 'page-newsletter-thanks',
       '#kettlebell': 'page-vault',
       '#dumbbell': 'page-vault',
       '#calisthenics': 'page-vault',
@@ -1514,6 +1584,21 @@
     }
     showPage();
     window.addEventListener('hashchange', showPage);
+
+    var nlForm = document.getElementById('nl-form');
+    if (nlForm) {
+      nlForm.addEventListener('submit', function(e){
+        if (!window.fetch || !window.FormData) { return; }
+        e.preventDefault();
+        var btn = nlForm.querySelector('button');
+        var err = document.getElementById('nl-error');
+        btn.disabled = true; err.hidden = true;
+        fetch(nlForm.action, { method:'POST', body:new FormData(nlForm), mode:'no-cors' })
+          .then(function(){ location.hash = '#newsletter-thanks'; nlForm.reset(); })
+          .catch(function(){ btn.disabled = false; err.hidden = false; })
+          .then(function(){ btn.disabled = false; });
+      });
+    }
 
     var navToggle = document.getElementById('nav-toggle');
     var navDropdown = document.getElementById('nav-dropdown');
