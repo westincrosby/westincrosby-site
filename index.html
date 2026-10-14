@@ -463,6 +463,11 @@
   .nl-btn[disabled]{opacity:0.6;cursor:wait;}
   .nl-note{margin:4px 0 0;font-size:0.85rem;color:var(--muted);}
   .nl-error{margin:0;font-size:0.9rem;color:#C0392B;}
+  .fw-row{display:flex;gap:10px;}
+  .fw-row .nl-input{min-width:0;}
+  .fw-check{display:flex;gap:10px;align-items:flex-start;text-align:left;font-size:0.92rem;color:var(--ink);cursor:pointer;margin:4px 0 2px;}
+  .fw-check input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--ink);}
+  .fw-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
 
   .fit-check-box{
     background:var(--surface);
@@ -1254,7 +1259,24 @@
 
   <div class="detail-cta">
     <p class="body-copy">Drop your name and email and it's on its way.</p>
-    <a class="btn fill" href="https://form.jotform.com/262616742155054" target="_blank" rel="noopener">Get My Free Starter Week</a>
+    <form class="nl-form" id="fw-form" action="https://submit.jotform.com/submit/262616742155054" method="post">
+      <input type="hidden" name="formID" value="262616742155054">
+      <input type="hidden" name="simple_spc" value="262616742155054-262616742155054">
+      <input type="hidden" name="submitSource" value="westincrosby.com">
+      <div class="fw-row">
+        <input class="nl-input" type="text" name="q2_q2_fullname0[first]" placeholder="First name" autocomplete="given-name" required>
+        <input class="nl-input" type="text" name="q2_q2_fullname0[last]" placeholder="Last name" autocomplete="family-name" required>
+      </div>
+      <input class="nl-input" type="email" name="q3_q3_email1" placeholder="Email address" autocomplete="email" required>
+      <input class="nl-input" type="text" name="q8_instagramHandle" placeholder="Instagram handle (optional)" autocomplete="off">
+      <label class="fw-check">
+        <input type="checkbox" name="q9_weeklyWorkouts[]" value="Yes, send me the 3 workouts I'm doing each week (free, every Sunday)">
+        <span>Also send me the 3 workouts I'm doing each week (free, every Sunday)</span>
+      </label>
+      <input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="fw-hp" aria-hidden="true">
+      <button class="btn fill nl-btn" type="submit">Get My Free Starter Week</button>
+      <p class="nl-note">Free. Unsubscribe anytime.</p>
+    </form>
   </div>
 
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
@@ -1584,6 +1606,23 @@
     }
     showPage();
     window.addEventListener('hashchange', showPage);
+
+    var fwForm = document.getElementById('fw-form');
+    if (fwForm) {
+      fwForm.addEventListener('submit', function(e){
+        var box = fwForm.querySelector('input[type=checkbox]');
+        if (!box || !box.checked || !window.fetch || !window.FormData) { return; }
+        e.preventDefault();
+        var btn = fwForm.querySelector('button'); btn.disabled = true;
+        var kit = new FormData();
+        kit.append('email_address', fwForm.querySelector('[name=q3_q3_email1]').value);
+        kit.append('fields[first_name]', fwForm.querySelector('[name="q2_q2_fullname0[first]"]').value);
+        var done = false;
+        function go(){ if (done) { return; } done = true; HTMLFormElement.prototype.submit.call(fwForm); }
+        setTimeout(go, 2500);
+        fetch('https://app.kit.com/forms/10043319/subscriptions', { method:'POST', body:kit, mode:'no-cors' }).then(go, go);
+      });
+    }
 
     var nlForm = document.getElementById('nl-form');
     if (nlForm) {
