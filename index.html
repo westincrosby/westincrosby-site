@@ -1046,7 +1046,7 @@
     <a class="btn fill" href="https://form.jotform.com/262585534840059" target="_blank" rel="noopener">Apply for Coaching</a>
   </div>
 
-  <a class="detail-back" href="#"><span class="brand-mark small">WC</span>&larr; Back to all plans</a>
+  <a class="detail-back" href="#programs"><span class="brand-mark small">WC</span>&larr; Back to all plans</a>
 </div>
 
 <div class="wrap" id="page-programming" hidden>
@@ -1161,7 +1161,7 @@
     <a class="btn fill" href="https://form.jotform.com/262606397272059" target="_blank" rel="noopener">I Only Want Programming</a>
   </div>
 
-  <a class="detail-back" href="#"><span class="brand-mark small">WC</span>&larr; Back to all plans</a>
+  <a class="detail-back" href="#programs"><span class="brand-mark small">WC</span>&larr; Back to all plans</a>
 </div>
 
 <div class="wrap" id="page-about" hidden>
@@ -1609,6 +1609,12 @@
     }
     showPage();
     window.addEventListener('hashchange', showPage);
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) { return; }
+      var h = a.getAttribute('href');
+      if (h === location.hash || (h === '#home' && !location.hash)) { e.preventDefault(); showPage(); }
+    });
 
     var fwForm = document.getElementById('fw-form');
     if (fwForm) {
