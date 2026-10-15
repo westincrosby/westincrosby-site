@@ -1595,7 +1595,8 @@
       '#strong': 'page-vault'
     };
     function showPage(){
-      var hash = location.hash || '#home';
+      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter'};
+      var hash = location.hash || paths[location.pathname.replace(/\/$/,'')] || '#home';
       var target = routes[hash] || 'page-home';
       pageIds.forEach(function(id){
         document.getElementById(id).hidden = (id !== target);

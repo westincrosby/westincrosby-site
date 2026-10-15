@@ -1,11 +1,10 @@
-/strong /#vault 302
-/free-week /#free 302
 /coaching https://form.jotform.com/262585534840059 302
 /programming https://form.jotform.com/262606397272059 302
-/programs /#vault 302
-/partners /#partners 302
-
-/vault https://westincrosby.com/#vault 302
-/options https://westincrosby.com/#programs 302
-/newsletter /#newsletter 302
-/weekly /#newsletter 302
+/strong /index.html 200
+/free-week /index.html 200
+/programs /index.html 200
+/partners /index.html 200
+/vault /index.html 200
+/options /index.html 200
+/newsletter /index.html 200
+/weekly /index.html 200
