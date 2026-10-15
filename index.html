@@ -1280,6 +1280,7 @@
     </form>
   </div>
   <p class="fw-alt">Not ready for a full week? Get <a href="#newsletter">The Sunday 3</a>, my free weekly workouts, instead &rarr;</p>
+  <p class="fw-alt">Just want core work? Get <a href="#core">Core 10</a>, my free core workouts &rarr;</p>
 
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
@@ -1328,6 +1329,56 @@
   <div class="detail-cta">
     <p class="body-copy">Want something to do before Sunday?</p>
     <a class="btn fill" href="#free">Get My Free Starter Week</a>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-core" hidden>
+  <div class="detail-eyebrow">Free Core Workouts</div>
+  <h1 class="detail-title">CORE 10.</h1>
+  <p class="body-copy">Ten core workouts I actually use, written out and ready to run. 10–20 minutes each, with one kettlebell, a pair of dumbbells, or nothing at all.</p>
+
+  <div class="detail-items">
+    <div class="detail-item">
+      <div class="detail-item-num">01</div>
+      <div>
+        <div class="detail-item-title">10 Core Workouts</div>
+        <div class="detail-item-desc">Kettlebell circuits, rotation work, carries, planks and a bodyweight floor circuit. Pick one by the time and gear you have, or add it to the end of any workout.</div>
+      </div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-item-num">02</div>
+      <div>
+        <div class="detail-item-title">Demos for Each One</div>
+        <div class="detail-item-desc">Links to my Instagram demos, a 3-minute warm-up, and scaling notes so you know how hard to push.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-cta">
+    <p class="body-copy">Drop your first name and email and I'll send it over.</p>
+    <form class="nl-form" id="core-form" action="https://app.kit.com/forms/10049488/subscriptions" method="post">
+      <input class="nl-input" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name" required>
+      <input class="nl-input" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+      <button class="btn fill nl-btn" type="submit">Send Me Core 10</button>
+      <p class="nl-note">Free. You'll also get The Sunday 3, my weekly workouts. Unsubscribe anytime.</p>
+      <p class="nl-error" id="core-error" hidden>Something went wrong. Please try again.</p>
+    </form>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-core-thanks" hidden>
+  <div class="detail-eyebrow">It's On Its Way</div>
+  <h1 class="detail-title">CHECK YOUR INBOX.</h1>
+  <p class="body-copy">Core 10 is headed to your email now. If you don't see it in a few minutes, check your Promotions or Spam folder. Can't wait? Grab it right here.</p>
+
+  <div class="detail-cta">
+    <a class="btn fill" href="/Core-10-Westin-Crosby.pdf" target="_blank" rel="noopener">Download Core 10</a>
+    <p class="body-copy" style="margin-top:18px;">Want a full week to go with it?</p>
+    <a class="btn" href="#free">Get My Free Starter Week</a>
   </div>
 
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
@@ -1575,7 +1626,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1588,6 +1639,9 @@
       '#newsletter': 'page-newsletter',
       '#weekly': 'page-newsletter',
       '#newsletter-thanks': 'page-newsletter-thanks',
+      '#core': 'page-core',
+      '#abs': 'page-core',
+      '#core-thanks': 'page-core-thanks',
       '#kettlebell': 'page-vault',
       '#dumbbell': 'page-vault',
       '#calisthenics': 'page-vault',
@@ -1595,7 +1649,7 @@
       '#strong': 'page-vault'
     };
     function showPage(){
-      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter'};
+      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter','/core':'#core','/abs':'#core'};
       var hash = location.hash || paths[location.pathname.replace(/\/$/,'')] || '#home';
       var target = routes[hash] || 'page-home';
       pageIds.forEach(function(id){
@@ -1630,6 +1684,21 @@
         function go(){ if (done) { return; } done = true; HTMLFormElement.prototype.submit.call(fwForm); }
         setTimeout(go, 2500);
         fetch('https://app.kit.com/forms/10043319/subscriptions', { method:'POST', body:kit, mode:'no-cors' }).then(go, go);
+      });
+    }
+
+    var coreForm = document.getElementById('core-form');
+    if (coreForm) {
+      coreForm.addEventListener('submit', function(e){
+        if (!window.fetch || !window.FormData) { return; }
+        e.preventDefault();
+        var btn = coreForm.querySelector('button');
+        var err = document.getElementById('core-error');
+        btn.disabled = true; err.hidden = true;
+        fetch(coreForm.action, { method:'POST', body:new FormData(coreForm), mode:'no-cors' })
+          .then(function(){ location.hash = '#core-thanks'; coreForm.reset(); })
+          .catch(function(){ err.hidden = false; })
+          .then(function(){ btn.disabled = false; });
       });
     }
 
