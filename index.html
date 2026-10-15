@@ -1270,13 +1270,10 @@
       </div>
       <input class="nl-input" type="email" name="q3_q3_email1" placeholder="Email address" autocomplete="email" required>
       <input class="nl-input" type="text" name="q8_instagramHandle" placeholder="Instagram handle (optional)" autocomplete="off">
-      <label class="fw-check">
-        <input type="checkbox" name="q9_weeklyWorkouts[]" value="Yes, send me the 3 workouts I'm doing each week (free, every Sunday)" checked>
-        <span>Also send me the 3 workouts I'm doing each week (free, every Sunday)</span>
-      </label>
+      <input type="hidden" name="q9_weeklyWorkouts[]" value="Yes, send me the 3 workouts I'm doing each week (free, every Sunday)">
       <input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="fw-hp" aria-hidden="true">
       <button class="btn fill nl-btn" type="submit">Get My Free Starter Week</button>
-      <p class="nl-note">Free. Unsubscribe anytime.</p>
+      <p class="nl-note">Free. You'll also get The Sunday 3, my weekly workouts. Unsubscribe anytime.</p>
     </form>
   </div>
   <p class="fw-alt">Not ready for a full week? Get <a href="#newsletter">The Sunday 3</a>, my free weekly workouts, instead &rarr;</p>
@@ -1673,8 +1670,7 @@
     var fwForm = document.getElementById('fw-form');
     if (fwForm) {
       fwForm.addEventListener('submit', function(e){
-        var box = fwForm.querySelector('input[type=checkbox]');
-        if (!box || !box.checked || !window.fetch || !window.FormData) { return; }
+        if (!window.fetch || !window.FormData) { return; }
         e.preventDefault();
         var btn = fwForm.querySelector('button'); btn.disabled = true;
         var kit = new FormData();
