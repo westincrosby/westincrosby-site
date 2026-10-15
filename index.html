@@ -1613,7 +1613,7 @@
       var a = e.target.closest && e.target.closest('a[href^="#"]');
       if (!a) { return; }
       var h = a.getAttribute('href');
-      if (h === location.hash || (h === '#home' && !location.hash)) { e.preventDefault(); showPage(); }
+      if (h === location.hash || (h === '#home' && !location.hash && location.pathname === '/')) { e.preventDefault(); showPage(); }
     });
 
     var fwForm = document.getElementById('fw-form');
