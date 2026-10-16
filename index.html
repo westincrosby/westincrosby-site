@@ -1264,7 +1264,6 @@
       <input class="nl-input" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name" required>
       <input class="nl-input" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
       <input type="hidden" name="tags[]" value="24632493">
-      <input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="fw-hp" aria-hidden="true">
       <button class="btn fill nl-btn" type="submit">Get My Free Starter Week</button>
       <p class="nl-note">Free. You'll also get The Sunday 3, my weekly workouts. Unsubscribe anytime.</p>
       <p class="nl-error" id="fw-error" hidden>Something went wrong. Please try again.</p>
@@ -1733,7 +1732,6 @@
       fwForm.addEventListener('submit', function(e){
         if (!window.fetch || !window.FormData) { return; }
         e.preventDefault();
-        if (fwForm.querySelector('[name=website]').value) { return; }
         var btn = fwForm.querySelector('button');
         var err = document.getElementById('fw-error');
         btn.disabled = true; err.hidden = true;
