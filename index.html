@@ -1259,24 +1259,31 @@
   </div>
 
   <div class="detail-cta">
-    <p class="body-copy">Drop your name and email and it's on its way.</p>
-    <form class="nl-form" id="fw-form" action="https://submit.jotform.com/submit/262616742155054" method="post">
-      <input type="hidden" name="formID" value="262616742155054">
-      <input type="hidden" name="simple_spc" value="262616742155054-262616742155054">
-      <input type="hidden" name="submitSource" value="westincrosby.com">
-      <div class="fw-row">
-        <input class="nl-input" type="text" name="q2_q2_fullname0[first]" placeholder="First name" autocomplete="given-name" required>
-        <input class="nl-input" type="text" name="q2_q2_fullname0[last]" placeholder="Last name" autocomplete="family-name" required>
-      </div>
-      <input class="nl-input" type="email" name="q3_q3_email1" placeholder="Email address" autocomplete="email" required>
-      <input class="nl-input" type="text" name="q8_instagramHandle" placeholder="Instagram handle (optional)" autocomplete="off">
-      <input type="hidden" name="q9_weeklyWorkouts[]" value="Yes, send me the 3 workouts I'm doing each week (free, every Sunday)">
+    <p class="body-copy">Drop your first name and email and it's on its way.</p>
+    <form class="nl-form" id="fw-form" action="https://app.kit.com/forms/10053025/subscriptions" method="post">
+      <input class="nl-input" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name" required>
+      <input class="nl-input" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+      <input type="hidden" name="tags[]" value="24632493">
       <input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="fw-hp" aria-hidden="true">
       <button class="btn fill nl-btn" type="submit">Get My Free Starter Week</button>
       <p class="nl-note">Free. You'll also get The Sunday 3, my weekly workouts. Unsubscribe anytime.</p>
+      <p class="nl-error" id="fw-error" hidden>Something went wrong. Please try again.</p>
     </form>
   </div>
   <p class="fw-alt">More free stuff: <a href="#newsletter">The Sunday 3</a>, my weekly workouts, <a href="#top10">Top 10 Workouts</a>, and <a href="#core">Top 10 Core Workouts</a>.</p>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-free-thanks" hidden>
+  <div class="detail-eyebrow">You're In</div>
+  <h1 class="detail-title">CHECK YOUR INBOX.</h1>
+  <p class="body-copy">Your free 7-Day Starter Week and bonus Top 10 Workouts are headed to your email now. If you don't see them in a few minutes, check your Promotions or Spam folder. Can't wait? Grab them right here.</p>
+
+  <div class="detail-cta">
+    <a class="btn fill" href="/Free-Starter-Week-Westin-Crosby.pdf" target="_blank" rel="noopener">Download the 7-Day Starter Week</a>
+    <a class="btn outline" href="/Top-10-Workouts-Westin-Crosby.pdf" target="_blank" rel="noopener" style="margin-top:10px;">Download Bonus: Top 10 Workouts</a>
+  </div>
 
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
@@ -1673,7 +1680,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks','page-free-thanks'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1692,6 +1699,7 @@
       '#top10': 'page-top10',
       '#workouts': 'page-top10',
       '#top10-thanks': 'page-top10-thanks',
+      '#free-thanks': 'page-free-thanks',
       '#kettlebell': 'page-vault',
       '#dumbbell': 'page-vault',
       '#calisthenics': 'page-vault',
@@ -1725,15 +1733,14 @@
       fwForm.addEventListener('submit', function(e){
         if (!window.fetch || !window.FormData) { return; }
         e.preventDefault();
-        var btn = fwForm.querySelector('button'); btn.disabled = true;
-        var kit = new FormData();
-        kit.append('email_address', fwForm.querySelector('[name=q3_q3_email1]').value);
-        kit.append('fields[first_name]', fwForm.querySelector('[name="q2_q2_fullname0[first]"]').value);
-        kit.append('tags[]', '24632493');
-        var done = false;
-        function go(){ if (done) { return; } done = true; HTMLFormElement.prototype.submit.call(fwForm); }
-        setTimeout(go, 2500);
-        fetch('https://app.kit.com/forms/10043319/subscriptions', { method:'POST', body:kit, mode:'no-cors' }).then(go, go);
+        if (fwForm.querySelector('[name=website]').value) { return; }
+        var btn = fwForm.querySelector('button');
+        var err = document.getElementById('fw-error');
+        btn.disabled = true; err.hidden = true;
+        fetch(fwForm.action, { method:'POST', body:new FormData(fwForm), mode:'no-cors' })
+          .then(function(){ location.hash = '#free-thanks'; fwForm.reset(); })
+          .catch(function(){ err.hidden = false; })
+          .then(function(){ btn.disabled = false; });
       });
     }
 
