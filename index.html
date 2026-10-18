@@ -721,6 +721,9 @@
   .stat-tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
   .stat-num{font-family:"Anton","Arial Narrow",sans-serif;font-size:2rem;line-height:1.05;letter-spacing:0.02em;}
   .stat-label{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  .stat-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+  .stat-split-num{display:block;font-family:"Anton","Arial Narrow",sans-serif;font-size:1.15rem;line-height:1.1;letter-spacing:0.02em;}
+  .stat-split-label{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
   .stat-note{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:0.68rem;letter-spacing:0.04em;color:var(--muted);margin-top:10px;}
   .fit-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
   .fit-tag{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:0.85rem;font-weight:600;}
@@ -1639,12 +1642,15 @@
   <p class="body-copy">I post short, full-body workouts with minimal equipment for busy men who don't have time to waste. Real training, filmed in my driveway gym and on the road. Your product shows up the way my audience actually uses it: mid-workout, not in a staged ad.</p>
 
   <div class="stat-grid">
-    <div class="stat-tile"><div class="stat-num">6.1M</div><div class="stat-label">Views, last 30 days (IG + FB)</div></div>
-    <div class="stat-tile"><div class="stat-num">54K</div><div class="stat-label">Total followers (IG + FB)</div></div>
-    <div class="stat-tile"><div class="stat-num">33K</div><div class="stat-label">Facebook followers</div></div>
-    <div class="stat-tile"><div class="stat-num">21K</div><div class="stat-label">Instagram followers</div></div>
-    <div class="stat-tile"><div class="stat-num">+8K</div><div class="stat-label">New followers, last 30 days (IG + FB)</div></div>
-    <div class="stat-tile"><div class="stat-num">91%</div><div class="stat-label">Male audience (IG + FB)</div></div>
+    <div class="stat-tile"><div class="stat-num">6.1M</div><div class="stat-label">Views, last 30 days <span style="white-space:nowrap">(IG + FB)</span></div></div>
+    <div class="stat-tile"><div class="stat-num">54K</div><div class="stat-label">Total followers</div>
+      <div class="stat-split">
+        <div><span class="stat-split-num">21K</span><span class="stat-split-label">Instagram</span></div>
+        <div><span class="stat-split-num">33K</span><span class="stat-split-label">Facebook</span></div>
+      </div>
+    </div>
+    <div class="stat-tile"><div class="stat-num">+8K</div><div class="stat-label">New followers, last 30 days <span style="white-space:nowrap">(IG + FB)</span></div></div>
+    <div class="stat-tile"><div class="stat-num">91%</div><div class="stat-label">Male audience <span style="white-space:nowrap">(IG + FB)</span></div></div>
   </div>
   <p class="stat-note">Follower counts as of Oct 2026. Views, growth and audience from Meta Insights, Sep 15 – Oct 14, 2026. Account launched July 2026.</p>
 
