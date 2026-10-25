@@ -468,6 +468,7 @@
   .fw-check input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--ink);}
   .fw-alt{text-align:center;margin:18px 0 0;font-size:0.95rem;color:var(--muted);}
   .fw-alt a{color:var(--ink);font-weight:600;}
+  .gear-code{font-family:ui-monospace,Menlo,monospace;font-weight:800;background:var(--surface-2);border:1px dashed var(--ink);padding:1px 6px;border-radius:4px;}
   .free-title{font-size:1.3rem;font-weight:800;color:var(--ink);line-height:1.25;margin-bottom:6px;}
   .fw-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
 
@@ -1279,6 +1280,53 @@
     </div>
   </div>
 
+  <p class="fw-alt">Looking for discount codes? <a href="#gear">See my gear &amp; codes</a>.</p>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-gear" hidden>
+  <div class="detail-eyebrow">What I Use</div>
+  <h1 class="detail-title">GEAR &amp; CODES.</h1>
+  <p class="body-copy">The brands I work with, with my links and discount codes in one place.</p>
+
+  <div class="plans" style="margin-top:24px;">
+    <div class="plan-col">
+      <div class="plan">
+        <div class="free-title">Pod Company</div>
+        <div class="plan-note">Cold plunge · ice baths and chillers</div>
+        <div class="plan-desc"><strong>10% off</strong> automatically with my link.</div>
+      </div>
+      <a class="btn fill plan-cta" href="https://www.podcompany.com/WestinCrosby" target="_blank" rel="noopener sponsored">Shop Pod Company</a>
+    </div>
+    <div class="plan-col">
+      <div class="plan">
+        <div class="free-title">Brrr</div>
+        <div class="plan-note">Cold plunge</div>
+        <div class="plan-desc">Use code <span class="gear-code">WESTIN10</span> at checkout.</div>
+      </div>
+      <a class="btn fill plan-cta" href="https://get.aspr.app/SH28cZ" target="_blank" rel="noopener sponsored">Shop Brrr</a>
+    </div>
+    <div class="plan-col">
+      <div class="plan">
+        <div class="free-title">Sunlighten</div>
+        <div class="plan-note">Infrared sauna</div>
+        <div class="plan-desc">Shop with my link.</div>
+      </div>
+      <a class="btn fill plan-cta" href="https://get.sunlighten.com/westincrosby" target="_blank" rel="noopener sponsored">Shop Sunlighten</a>
+    </div>
+    <div class="plan-col">
+      <div class="plan">
+        <div class="free-title">Equip Foods</div>
+        <div class="plan-note">Protein and nutrition</div>
+        <div class="plan-desc">Use code <span class="gear-code">WESTIN_CROSBY</span> at checkout.</div>
+      </div>
+      <a class="btn fill plan-cta" href="https://www.equipfoods.com/WESTIN_CROSBY" target="_blank" rel="noopener sponsored">Shop Equip</a>
+    </div>
+  </div>
+
+  <p class="fw-alt" style="font-size:0.85rem;">Some of these are partner links. I may earn a commission, or I got the product free. It doesn't cost you anything extra.</p>
+
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
 
@@ -1720,6 +1768,7 @@
       <div class="footer-col-title">Company</div>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#gear">Gear &amp; Codes</a>
       <a href="#partners">Brand Partnerships</a>
     </div>
   </div>
@@ -1731,7 +1780,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks','page-free-thanks','page-freebies'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks','page-free-thanks','page-freebies','page-gear'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1740,6 +1789,7 @@
       '#programming': 'page-programming',
       '#free': 'page-free',
       '#freebies': 'page-freebies',
+      '#gear': 'page-gear',
       '#vault': 'page-vault',
       '#partners': 'page-partners',
       '#newsletter': 'page-newsletter',
@@ -1759,7 +1809,7 @@
       '#strong': 'page-vault'
     };
     function showPage(){
-      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter','/core':'#core','/abs':'#core','/top10':'#top10','/workouts':'#top10','/free':'#freebies','/freebies':'#freebies'};
+      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter','/core':'#core','/abs':'#core','/top10':'#top10','/workouts':'#top10','/free':'#freebies','/freebies':'#freebies','/gear':'#gear','/codes':'#gear'};
       var hash = location.hash || paths[location.pathname.replace(/\/$/,'')] || '#home';
       var target = routes[hash] || 'page-home';
       pageIds.forEach(function(id){
