@@ -1780,6 +1780,21 @@
       if (h === location.hash || (h === '#home' && !location.hash && location.pathname === '/')) { e.preventDefault(); showPage(); }
     });
 
+    // Visitors from the ManyChat new-follower DM arrive with ?src=follow: tag their Kit signups.
+    (function(){
+      var src = null;
+      try { src = new URLSearchParams(location.search).get('src'); } catch(e) {}
+      try { if (src) { sessionStorage.setItem('wc_src', src); } else { src = sessionStorage.getItem('wc_src'); } } catch(e) {}
+      if (src !== 'follow') { return; }
+      ['fw-form','top10-form','core-form','nl-form'].forEach(function(id){
+        var f = document.getElementById(id);
+        if (!f) { return; }
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = 'tags[]'; i.value = '25003396';
+        f.appendChild(i);
+      });
+    })();
+
     var fwForm = document.getElementById('fw-form');
     if (fwForm) {
       fwForm.addEventListener('submit', function(e){
