@@ -1271,6 +1271,14 @@
       </a>
     </div>
     <div class="plan-col">
+      <a class="plan" href="#landmine">
+        <div class="free-title">Top 10 Landmine Workouts</div>
+        <div class="plan-note">10 landmine workouts · with tracker</div>
+        <div class="plan-desc">Ten workouts with one barbell and a few plates. Press, row, squat, lunge and rotate, 8–25 minutes each.</div>
+        <div class="plan-more">Get the landmine workouts &rarr;</div>
+      </a>
+    </div>
+    <div class="plan-col">
       <a class="plan" href="#newsletter">
         <div class="free-title">The Sunday 3</div>
         <div class="plan-note">weekly email · every Sunday</div>
@@ -1541,6 +1549,57 @@
   <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
 </div>
 
+<div class="wrap" id="page-landmine" hidden>
+  <div class="detail-eyebrow">Free Landmine Workouts</div>
+  <h1 class="detail-title">TOP 10 LANDMINE<br>WORKOUTS.</h1>
+  <p class="body-copy">Ten landmine workouts, written out and ready to run. 8–25 minutes each, with one barbell and a few plates.</p>
+
+  <div class="detail-items">
+    <div class="detail-item">
+      <div class="detail-item-num">01</div>
+      <div>
+        <div class="detail-item-title">10 Landmine Workouts</div>
+        <div class="detail-item-desc">Full body, upper, lower, core, an EMOM, an AMRAP and an 8-minute finisher. Pick one by the time you have, or add a short one to the end of any workout.</div>
+      </div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-item-num" style="display:flex; align-items:flex-start; justify-content:center; padding-top:2px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="var(--ink)"><path d="M12 2l2.9 6.9L22 9.5l-5.5 5 1.6 7.5L12 18.3 5.9 22l1.6-7.5L2 9.5l7.1-.6z"/></svg></div>
+      <div>
+        <div class="detail-item-title">Demos, Warm-Up and Scaling</div>
+        <div class="detail-item-desc">Links to my Instagram demos, a 3-minute warm-up, scaling notes, and how to set one up in a corner if you don't own a landmine.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-cta">
+    <p class="body-copy">Drop your first name and email and I'll send it over.</p>
+    <form class="nl-form" id="landmine-form" action="https://app.kit.com/forms/10142551/subscriptions" method="post">
+      <input class="nl-input" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name" required>
+      <input class="nl-input" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+      <button class="btn fill nl-btn" type="submit">Send Me the Top 10 Landmine</button>
+      <p class="nl-note">Free. You'll also get The Sunday 3, my free weekly email with 3 workouts for your week. Unsubscribe anytime.</p>
+      <p class="nl-error" id="landmine-error" hidden>Something went wrong. Please try again.</p>
+    </form>
+  </div>
+  <p class="fw-alt">Looking for something else? <a href="#freebies">See all the free stuff</a>.</p>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
+<div class="wrap" id="page-landmine-thanks" hidden>
+  <div class="detail-eyebrow">It's On Its Way</div>
+  <h1 class="detail-title">CHECK YOUR INBOX.</h1>
+  <p class="body-copy">Your Top 10 Landmine Workouts are headed to your email now. If you don't see them in a few minutes, check your Promotions or Spam folder. Can't wait? Grab them right here.</p>
+
+  <div class="detail-cta">
+    <a class="btn fill" href="/Top-10-Landmine-Workouts-Westin-Crosby.pdf" target="_blank" rel="noopener">Download Top 10 Landmine Workouts</a>
+    <p class="body-copy" style="margin-top:18px;">Want a full week to go with it?</p>
+    <a class="btn outline" href="#free">Get My Free Starter Week</a>
+  </div>
+
+  <a class="detail-back" href="#home"><span class="brand-mark small">WC</span>&larr; Back home</a>
+</div>
+
 <div class="wrap" id="page-vault" hidden>
   <div class="detail-eyebrow">Self-Guided 8-Week Programs — Pick Your Edition</div>
   <h1 class="detail-title">30-MINUTE<br>STRONG.</h1>
@@ -1788,7 +1847,7 @@
 
 <script>
   (function(){
-    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks','page-free-thanks','page-freebies','page-gear'];
+    var pageIds = ['page-home','page-programs','page-about','page-coaching','page-programming','page-free','page-vault','page-partners','page-newsletter','page-newsletter-thanks','page-core','page-core-thanks','page-top10','page-top10-thanks','page-free-thanks','page-freebies','page-gear','page-landmine','page-landmine-thanks'];
     var routes = {
       '#home': 'page-home',
       '#programs': 'page-programs',
@@ -1806,6 +1865,8 @@
       '#core': 'page-core',
       '#abs': 'page-core',
       '#core-thanks': 'page-core-thanks',
+      '#landmine': 'page-landmine',
+      '#landmine-thanks': 'page-landmine-thanks',
       '#top10': 'page-top10',
       '#workouts': 'page-top10',
       '#top10-thanks': 'page-top10-thanks',
@@ -1817,7 +1878,7 @@
       '#strong': 'page-vault'
     };
     function showPage(){
-      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter','/core':'#core','/abs':'#core','/top10':'#top10','/workouts':'#top10','/free':'#freebies','/freebies':'#freebies','/gear':'#gear','/codes':'#gear'};
+      var paths = {'/strong':'#vault','/free-week':'#free','/programs':'#vault','/partners':'#partners','/vault':'#vault','/options':'#programs','/newsletter':'#newsletter','/weekly':'#newsletter','/core':'#core','/abs':'#core','/top10':'#top10','/workouts':'#top10','/free':'#freebies','/freebies':'#freebies','/gear':'#gear','/codes':'#gear','/landmine':'#landmine'};
       var hash = location.hash || paths[location.pathname.replace(/\/$/,'')] || '#home';
       var target = routes[hash] || 'page-home';
       pageIds.forEach(function(id){
@@ -1844,7 +1905,7 @@
       try { src = new URLSearchParams(location.search).get('src'); } catch(e) {}
       try { if (src) { sessionStorage.setItem('wc_src', src); } else { src = sessionStorage.getItem('wc_src'); } } catch(e) {}
       if (src !== 'follow') { return; }
-      ['fw-form','top10-form','core-form','nl-form'].forEach(function(id){
+      ['fw-form','top10-form','core-form','landmine-form','nl-form'].forEach(function(id){
         var f = document.getElementById(id);
         if (!f) { return; }
         var i = document.createElement('input');
@@ -1893,6 +1954,21 @@
         btn.disabled = true; err.hidden = true;
         fetch(coreForm.action, { method:'POST', body:new FormData(coreForm), mode:'no-cors' })
           .then(function(){ location.hash = '#core-thanks'; coreForm.reset(); })
+          .catch(function(){ err.hidden = false; })
+          .then(function(){ btn.disabled = false; });
+      });
+    }
+
+    var landmineForm = document.getElementById('landmine-form');
+    if (landmineForm) {
+      landmineForm.addEventListener('submit', function(e){
+        if (!window.fetch || !window.FormData) { return; }
+        e.preventDefault();
+        var btn = landmineForm.querySelector('button');
+        var err = document.getElementById('landmine-error');
+        btn.disabled = true; err.hidden = true;
+        fetch(landmineForm.action, { method:'POST', body:new FormData(landmineForm), mode:'no-cors' })
+          .then(function(){ location.hash = '#landmine-thanks'; landmineForm.reset(); })
           .catch(function(){ err.hidden = false; })
           .then(function(){ btn.disabled = false; });
       });
